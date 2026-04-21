@@ -1,0 +1,10 @@
+{
+  "name": "trd-app-61c44159",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo 'no build'",
+    "start": "echo 'static site'"
+  }
+}

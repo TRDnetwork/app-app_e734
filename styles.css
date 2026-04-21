@@ -1,0 +1,228 @@
+:root {
+  --bg: #0F1E3A;
+  --surface: #1A2B4A;
+  --text: #F5F1E6;
+  --text-dim: #A39BAE;
+  --accent: #D97706;
+  --accent-alt: #EAB308;
+  --border: #314262;
+  --success: #16A34A;
+  --warning: #F59E0B;
+  --error: #DC2626;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(217, 119, 6, 0.1), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Form */
+.form-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+}
+
+.email-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  border-radius: 6px 0 0 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 200ms ease-in-out;
+}
+
+.email-input:focus {
+  border-color: var(--accent);
+}
+
+.submit-btn {
+  background-color: var(--accent);
+  color: var(--text);
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: var(--accent-alt);
+  transform: translateY(-1px);
+}
+
+.success-message {
+  margin-top: 1rem;
+  color: var(--success);
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.success-message.visible {
+  opacity: 1;
+}
+
+.success-message.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* About Section */
+.about-section {
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.about-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-top: 2px solid var(--accent);
+}
+
+.about-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-text {
+  color: var(--text-dim);
+  font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: var(--bg);
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.social-links {
+  margin-bottom: 1rem;
+}
+
+.social-link {
+  color: var(--text-dim);
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.social-link:hover {
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+.copyright {
+  color: var(--text-dim);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+
+  .about-card {
+    padding: 1rem;
+  }
+
+  .email-input,
+  .submit-btn {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .about-section {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .about-card {
+    margin: 0 1rem;
+  }
+}
